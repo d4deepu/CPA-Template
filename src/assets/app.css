@@ -1,0 +1,114 @@
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    padding-top: 30px;
+    min-height: 900px;
+    box-sizing:border-box;
+    background: url(bg.jpg) center;
+    background-repeat: repeat-y;
+  }
+  #logo {
+    width: 300px;
+  }
+  .container {
+    height: 100%;
+  }
+  .graytext {
+    margin-top: 20px;
+    font-family: 'Anton', sans-serif;
+    color: #dadada;
+    text-align: left;
+  }
+  .nummsg {
+    position: absolute;
+    right:0;
+    top:0;
+      font-size:1.1em;
+      line-height: 2.5em;
+    font-family: 'Anton', sans-serif;
+    color: #555555;
+    text-shadow: 2px 2px 0 #000;
+      height:100%;
+  }
+  .btn {
+    font-family: 'Anton', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+  }
+  .numbox {
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    padding-left: 0px;
+  }
+  .diabox {
+    display: block;
+    /* margin:5px 0 5px 5px; */
+    float:left;
+    background: url(dia.png) no-repeat scroll;
+    background-position: left 5px;
+    background-size: contain;
+    height:50px;
+    width:50px;
+  }
+  .coinbox {
+    display: block;
+    /* margin:5px 0 5px 5px; */
+    float:left;
+    background: url(coin.png) no-repeat scroll;
+    background-position: left 5px;
+    background-size: contain;
+    height:50px;
+    width:50px;
+  }
+  /* .valuebox {
+    margin-top: 20px;
+  } */
+  .pointbtn {
+  -webkit-box-shadow: 5px 5px 0px 2px rgba(0,0,0,0.63);
+  -moz-box-shadow: 5px 5px 0px 2px rgba(0,0,0,0.63);
+  box-shadow: 5px 5px 0px 2px rgba(0,0,0,0.63);
+  border-radius: 10px;
+  }
+  .symbol {
+    height: 50px;
+    width: 50px;
+    float: left;
+    vertical-align: middle;
+  }
+  .mybtncol {
+    /* padding: 2px; */
+  }
+  
+  .first-screen-enter,
+  .first-screen-leave-to {
+    opacity: 0;
+  }
+  .first-screen-enter-to,
+  .first-screen-leave {
+    opacity: 1;
+  }
+  .first-screen-enter-active,
+  .first-screen-leave-active {
+    transition: opacity 400ms ease-out;
+  }
+  @media only screen and (max-width: 500px) {
+    .container {
+      width: 100%!important;
+      padding-right: 5px!important;
+      padding-left: 5px!important;
+      margin-right: auto!important;
+      margin-left: auto!important;
+    }
+    .col-2 {
+      padding-left:5px;
+      padding-right: 5px;
+    }
+  }
+
+  .myh2 {
+    font-family: 'Anton', sans-serif;
+    color: #fddb17;
+    text-shadow: 2px 2px 0 #000;
+  }
