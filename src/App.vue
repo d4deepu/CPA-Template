@@ -87,6 +87,37 @@
         </div>
         </section>
         </transition>
+
+        <transition name="first-screen">
+          <section v-if="ispart2">
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <small>Platform</small><br/>
+                  <h2 class="myh2 lightborder">Android</h2>
+                </div>
+                <div class="col-md-6">
+                  <small>Username</small><br />
+                  <h2 class="myh2 lightborder">Trey</h2>
+                </div>
+              </div>
+                
+              <div class="row">
+                <div class="col-12">
+                  <c-loader :smallone="true"></c-loader>
+                  <h4 v-html="loading[i]"></h4>
+                </div>
+                <div class="col-12">
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" :style="{'width': perc+'%'}" :aria-valuenow="perc" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+          </section>
+        </transition>
       </lg-container>
       
       <div  style="color:white;font-size:2em;" @click="showModal=!showModal">Hello</div>
@@ -94,30 +125,11 @@
       :showNow="showModal"
       @submitted="submitted"
       ></my-modal>
-    <lg-container>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <small>Platform</small><br/>
-            <h2 class="myh2">Android</h2>
-          </div>
-          <div class="col-md-6">
-            <small>Username</small><br />
-            <h2 class="myh2">Trey</h2>
-          </div>
-        </div>
-          
-        <div class="row">
-          <div class="col-1"></div>
-          <div class="col-10">
-             <div class="progress">
-              <div class="progress-bar progress-bar-striped bg-warning progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-          </div>
-        </div>
-        </div>
-        </lg-container>
       
+      <veri-modal
+       :showNow="showveri"
+       :link="link"
+      ></veri-modal>
       
     </div>
   </div>
@@ -130,6 +142,7 @@ import GoldHead from './components/GoldHead.vue'
 import AniNum from './components/AniNum.vue'
 import CLoader from './components/Loader.vue'
 import MyModal from './components/MyModal.vue'
+import VeriModal from './components/VeriModal.vue'
 
 export default {
   name: 'app',
@@ -140,6 +153,7 @@ export default {
      AniNum,
      CLoader,
      MyModal,
+     VeriModal
   },
   data() {
     return {
@@ -158,8 +172,32 @@ export default {
       isdocloaded: false,
       showmaincontent: false,
       showModal: false,
-      ispart2: false
+      ispart2: false,
+      perc: 0,
+      username : "User",
+      platform: "Android",
+      i : 0,
+      showveri: false,
+      link: "https://www.google.com"
     }
+  },
+  computed: {
+    loading: function() {
+      return [
+        'Searching for '+this.username+'..',
+        'Successfully found username <span class="waygreen">'+this.username+'</span>',
+        'Connecting to Username <span class="waygreen">'+this.username+'</span> on <span class="waygreen">'+this.platform+'</span> Platform',
+        'Scanning for Exploit in Node',
+        'Found 2 Ports Open',
+        'Injection in progress..',
+        'Transfer Done!',
+        'Waiting for Response......',
+        'Verifying User Credentials',
+        'Performing verification..',
+        '<span class="wayred">Automatic Human Verification failed!</span>',
+      ]
+      }
+
   },
   mounted() {
     this.dia.val=10000
@@ -178,6 +216,8 @@ export default {
       this.showModal=true;
     },
     submitted(event) {
+      this.platform =  event.platform
+      this.username = event.name
       this.showModal= false
       console.log(event)
       this.showmaincontent=false //hidden main
@@ -190,11 +230,34 @@ export default {
 
           setTimeout(() => { 
             this.ispart2 = true //show part 2
-          },300)
+            this.showPart2()
+          },400)
 
         },300);
       }, 500);
+    },
+    showPart2() {
+        this.part2loop ()
+    },
+    part2loop() {
+               
+       let timewait = this.getRandomInt(600,1600)
+        setTimeout(function () {   
 
+            let max = this.loading.length-1
+            let per = Math.ceil((this.i/max)*100)
+            console.log(per + " : "+ this.loading[this.i]+" : "+this.i+" : "+max)
+            this.perc = per
+            if (this.i < max) {    
+              this.i++        
+              this.part2loop();             
+            }else {
+                this.showveri= true;
+            }                       
+        }.bind(this), timewait)
+      },
+    getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
   }
 }

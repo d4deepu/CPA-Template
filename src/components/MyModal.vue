@@ -19,7 +19,6 @@
         <option>Android</option>
         <option>iOS</option>
         </select>
-        <small>{{platform}}</small>
     </div>
     <div class="row" style="margin-top:20px;">
           <div class="col-sm-3"></div>
@@ -110,5 +109,7 @@ export default {
 .platform-form {
     margin-top:30px;
 }
+
+
 </style>
 

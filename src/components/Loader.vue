@@ -1,5 +1,5 @@
 <template>
-    <div class="spinner">
+    <div class="spinner" :class="{'spsm': smallone, 'splg' : !smallone }">
     <div class="rect1"></div>
     <div class="rect2"></div>
     <div class="rect3"></div>
@@ -9,20 +9,26 @@
 </template>
 <script>
 export default {
-    
+    props: {
+      smallone: {'default': false}
+     }
 }
 </script>
 
 <style>
 .spinner {
-  margin: 100px auto;
   width: 70px;
   height: 50px;
   text-align: center;
   font-size: 10px;
   z-index:3;
 }
-
+.spsm {
+  margin: 50px auto;
+}
+.splg {
+  margin: 100px auto;
+}
 .spinner > div {
   background-color: #fddb17;
   margin-left: 1px;

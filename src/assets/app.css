@@ -112,3 +112,13 @@
     color: #fddb17;
     text-shadow: 2px 2px 0 #000;
   }
+  .lightborder {
+    border: solid 1px #444;
+    border-radius: 5px;
+  }
+  .waygreen {
+    color: #42f456;
+  }
+  .wayred {
+   color: #f44141;
+  }
