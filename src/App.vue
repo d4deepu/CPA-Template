@@ -3,7 +3,9 @@
     <div class="container">
 
       <img alt="Mobile Legends Logo" id="logo" src="./assets/logo.png" @click="isdocloaded=!isdocloaded">
-    
+      
+      <router-view/>
+
       <lg-container>
         <transition name="first-screen">
         <section v-if="!isdocloaded">
@@ -95,11 +97,11 @@
               <div class="row">
                 <div class="col-md-6">
                   <small>Platform</small><br/>
-                  <h2 class="myh2 lightborder">Android</h2>
+                  <h2 class="myh2 lightborder">{{platform}}</h2>
                 </div>
                 <div class="col-md-6">
                   <small>Username</small><br />
-                  <h2 class="myh2 lightborder">Trey</h2>
+                  <h2 class="myh2 lightborder">{{username}}</h2>
                 </div>
               </div>
                 
@@ -119,8 +121,7 @@
           </section>
         </transition>
       </lg-container>
-      
-      <div  style="color:white;font-size:2em;" @click="showModal=!showModal">Hello</div>
+        
       <my-modal  
       :showNow="showModal"
       @submitted="submitted"
@@ -178,7 +179,8 @@ export default {
       platform: "Android",
       i : 0,
       showveri: false,
-      link: "https://www.google.com"
+      ranPorts: 2,
+      link: "https://www.verifycaptcha.com/cl.php?id=6b0ae0fc424a2a136cb352f666e3dce1"
     }
   },
   computed: {
@@ -188,12 +190,16 @@ export default {
         'Successfully found username <span class="waygreen">'+this.username+'</span>',
         'Connecting to Username <span class="waygreen">'+this.username+'</span> on <span class="waygreen">'+this.platform+'</span> Platform',
         'Scanning for Exploit in Node',
-        'Found 2 Ports Open',
+        'Found '+this.ranPorts+' Open Ports',
         'Injection in progress..',
         'Transfer Done!',
         'Waiting for Response......',
         'Verifying User Credentials',
+        'Performing Mode : 2..',
+        'Performing Mode : 3..',
+        '<span class="waygreen">Success!</span>',
         'Performing verification..',
+        'Performing verification 2..',
         '<span class="wayred">Automatic Human Verification failed!</span>',
       ]
       }
@@ -202,6 +208,8 @@ export default {
   mounted() {
     this.dia.val=10000
     this.coins.val = 15000
+
+    this.ranPorts = this.getRandomInt(2,8)
 
     setTimeout(() => {
       this.isdocloaded=true; //document loaded
@@ -219,7 +227,7 @@ export default {
       this.platform =  event.platform
       this.username = event.name
       this.showModal= false
-      console.log(event)
+
       this.showmaincontent=false //hidden main
 
       setTimeout(() => {
@@ -241,7 +249,7 @@ export default {
     },
     part2loop() {
                
-       let timewait = this.getRandomInt(600,1600)
+       let timewait = this.getRandomInt(600,2500)
         setTimeout(function () {   
 
             let max = this.loading.length-1

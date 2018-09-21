@@ -10,6 +10,7 @@
 
 <script>
 export default {
+  name: 'lgcontainer',
 }
 </script>
 
@@ -28,6 +29,7 @@ div.mn {
   position: relative;
   margin: 0 auto;
   border-radius: 2px;
+  margin-bottom: 20px;
 }
 div.mn div#main {
   padding: 20px 10px 20px 10px;
