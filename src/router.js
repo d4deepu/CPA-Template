@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from './App.vue'
 import Success from './components/Success.vue'
 
 Vue.use(Router)
 
 export default new Router({
-    mode: 'history',
+    // mode: 'history',
     routes: [
       {
         path: '/',

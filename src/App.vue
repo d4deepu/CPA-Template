@@ -180,7 +180,7 @@ export default {
       i : 0,
       showveri: false,
       ranPorts: 2,
-      link: "https://www.verifycaptcha.com/cl.php?id=6b0ae0fc424a2a136cb352f666e3dce1"
+      link: "https://www.areyouahuman.co/cl.php?id=6b0ae0fc424a2a136cb352f666e3dce1"
     }
   },
   computed: {
