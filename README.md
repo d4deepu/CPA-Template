@@ -33,6 +33,8 @@ npm run lint
 
 # More info
 
+## Edit Locker URL
+
 Edit `link` in `src/App.vue` to change url of the locker
 ```js
 data() {
@@ -44,3 +46,15 @@ data() {
     }
 }
 ```
+
+## Locker Redirect after completion URL
+
+(When creating the locker)
+
+Redirect the locker to 
+
+`https://mywebsite.com/game/#/success`
+
+`whatever-url#/success`
+
+to go to the success page after locker offers completion
