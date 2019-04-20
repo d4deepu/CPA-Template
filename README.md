@@ -30,3 +30,17 @@ Ignore for now
 ```
 npm run lint
 ```
+
+# More info
+
+Edit `link` in `src/App.vue` to change url of the locker
+```js
+data() {
+    return {
+      ...,
+      ...,
+      ...,
+      link: "https://www.hostedfiles.net/cl.php?id=270355d0033eee9e2e2f38c23b93ed8d"
+    }
+}
+```
