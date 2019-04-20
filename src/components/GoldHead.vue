@@ -1,7 +1,7 @@
 <template>
-  <h1>
+  <h2>
     <slot></slot>
-  </h1>
+  </h2>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
+h2 {
   font-family: 'Anton', sans-serif;
   color: #fddb17;
   text-shadow: 2px 2px 0 #000;
